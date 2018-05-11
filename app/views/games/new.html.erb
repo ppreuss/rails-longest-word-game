@@ -1,0 +1,18 @@
+<div>
+<div class="box">
+<% @letters.each do |letter| %>
+
+<div class="blueblock"><%= letter %></div>
+<% end %>
+
+</div>
+
+<form action="/score">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="text" name="word" placeholder="Enter your word here!">
+  <input type="submit" value="Submit">
+  <input type="hidden" value= "<%=@letters %>" name= "grid">
+  <input type="hidden" value= "<%=@start_time %>" name="start">
+</form>
+
+</div>
